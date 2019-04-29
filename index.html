@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+<div id="app">
+    <div class="calendar">
+        <table class="calendar-table" cellspacing="1" cellpadding="1">
+            <tr>
+                <th>日</th>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+                <th>五</th>
+                <th>六</th>
+            </tr>
+            <template v-for="monthItem in showCalendarArray">
+                <tr>
+                    <td colspan="7">{{monthItem.year+'年'+monthItem.month+'月'}}</td>
+                </tr>
+                <tr v-for="(list,index) in monthItem.monthDate" class="calendar-item">
+                    <td v-for="(item,value) in list">
+                        <span class="day" v-if="item > 0" @click="changeItemColor(index*7+value,monthItem)" :class="{'active':(index*7+value) == monthItem.selectIndex}">
+                            {{item}}
+                        </span>
+                    </td>
+                </tr>
+            </template>
+        </table>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="calendar.js"></script>
+</body>
+</html>

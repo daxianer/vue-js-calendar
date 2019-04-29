@@ -1,0 +1,29 @@
+/*日历*/
+.calendar {
+    background-color: rgb(248, 248, 248);
+    color: rgb(115, 115, 115);
+}
+
+.calendar-table {
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.calendar p {
+    text-align: center;
+}
+
+.day {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.active {
+    background-color: rgb(86, 142, 242);
+    color: white;
+}
